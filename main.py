@@ -22,17 +22,17 @@ async def check_for_pronouns():
     for guild in bot.guilds:
         for member in guild.members:
             for role in member.roles: 
-                if role.name == "They/Them" and "/" not in member.name: 
-                    await member.edit(nick=f"{member.name} (They/Them)")
+                if role.name == "They/Them" and "/" not in member.display_name: 
+                    await member.edit(nick=f"{member.display_name} (They/Them)")
                     print("Nickname for they/them Changed")
-                elif role.name == "She/Her" and "/" not in member.name:
-                    await member.edit(nick=f"{member.name} (She/Her)")
+                elif role.name == "She/Her" and "/" not in member.display_name:
+                    await member.edit(nick=f"{member.display_name} (She/Her)")
                     print("Nickname for she/her Changed")
-                elif role.name == "He/Him" and "/" not in member.name:
-                    await member.edit(nick=f"{member.name} (He/Him)")
+                elif role.name == "He/Him" and "/" not in member.display_name:
+                    await member.edit(nick=f"{member.display_name} (He/Him)")
                     print("Nickname for he/him Changed")
-                elif role.name == "Any Pronouns" and "(" not in member.name:
-                    await member.edit(nick=f"{member.name} (Any Pronouns)")
+                elif role.name == "Any Pronouns" and "(" not in member.display_name:
+                    await member.edit(nick=f"{member.display_name} (Any Pronouns)")
                     print("Nickname for any pronouns Changed")
 
 bot.run(TOKEN)
